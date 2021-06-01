@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>*ngIf | else</h1>
+  <button class="btn btn-info" (click)="isChecking()">{{ status }}</button>
+  <p *ngIf="isShowing; else nowHiding">this append because *ngIf = true</p>
+  <ng-template #nowHiding>
+    <p>now *ngIf = false</p>
+  </ng-template>
+</div>

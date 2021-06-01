@@ -1,0 +1,5 @@
+<div class="container">
+    <h1>ngStyle</h1>
+    <p>Random some number if number > 5 color button color green <br><strong>NUMBER: "{{ randomNumber }}"</strong> </p>
+    <button [ngStyle]="{backgroundColor: getColor()}" class="btn btn-default" (click)="onClickToRefesh()">Refesh</button>
+</div>
