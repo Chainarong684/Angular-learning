@@ -4,11 +4,15 @@
   <button class="btn btn-primary" (click)="onClickAction()">
     Display Details
   </button>
-  <p *ngIf="toggleData">Hello World</p>
+  <p *ngIf="toggleData; else hello">Goodbye World</p>
+  <ng-template #hello>
+    <p>Hello World</p>
+  </ng-template>
+
   <div
-    *ngFor="let logItem of log"
-    [ngStyle]="{ backgroundColor: logItem >= 5 ? 'blue' : 'transparent' }"
-    [ngClass]="{ text: logItem >= 5 }"
+    *ngFor="let logItem of log; let i = index"
+    [ngStyle]="{ backgroundColor: i >= 5 ? 'blue' : 'transparent' }"
+    [ngClass]="{ text: i >= 5 }"
   >
     {{ logItem }}
   </div>
